@@ -114,7 +114,7 @@ app.get('/statement/date', verifyIfExistsAccountCPF, (request, response) => {
   return response.json(customer.statement)
 });
 
-app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
+app.put("/updateAccount", verifyIfExistsAccountCPF, (request, response) => {
   const { name } = request.body;
   const { customer } = request;
 
@@ -123,13 +123,13 @@ app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
   return response.status(201).send();
 });
 
-app.get("/account", verifyIfExistsAccountCPF, (request, response) => {
+app.get("/searchAccount", verifyIfExistsAccountCPF, (request, response) => {
   const { customer } = request;
 
   return response.json(customer);
 });
 
-app.delete("/account", verifyIfExistsAccountCPF, (request, response) => {
+app.delete("/deleteAccount", verifyIfExistsAccountCPF, (request, response) => {
   const { customer } = request;
 
   //splice
